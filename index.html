@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Combos de Vino | Tienda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Fuente caligráfica para el logo -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- (Opcional) Fuentes para títulos/textos si las usas en el CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">
+        <span class="logo-main">Dulce Brindis</span>
+      </h1>
+      <nav>
+        <a href="#lista-combos">Combos</a>
+        <a href="#dulce-brindis">Sobre Dulce Brindis</a>
+        <a href="#beneficios">Por qué funciona</a>
+        <a href="#faq">Pasos para hacer tu pedido</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero hero-video-bg" id="producto">
+      <!-- Video de fondo del hero -->
+      <video
+        class="hero-bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <source src="media/Wine.mp4" type="video/mp4" />
+      </video>
+
+      <!-- Capa oscura encima del video para que el texto se lea -->
+      <div class="hero-bg-overlay"></div>
+
+      <!-- Contenido del hero -->
+      <div class="container hero-grid">
+        <div>
+          <h2>Combo de Vino + chocolates</h2>
+          <p class="hero-subtitle">
+            Una experiencia completa para compartir: vino seleccionado + snacks maridados.
+          </p>
+          <ul class="hero-list">
+            <li>✅ 1 botella de vino tinto reserva 750 ml</li>
+            <li>✅ Mix de snacks gourmet (frutos secos, chocolates)</li>
+            <li>✅ 2 copas para vino y dedicatoria personalizada </li>
+          </ul>
+          <div class="hero-price">
+            <span class="price-note">Combo Degustación</span>
+            <span class="price" id="precioHero"></span>
+          </div>
+          <a
+            href="#lista-combos"
+            id="btnComprarHero"
+            class="btn-primary"
+          >
+            Ver opciones de combos
+          </a>
+          <p class="hero-guarantee">
+            💳 Pago seguro &nbsp;|&nbsp; 🚚 Entrega local &nbsp;|&nbsp; 🎁 Ideal para regalo
+          </p>
+        </div>
+
+        <div class="hero-image">
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="media/combo4.jpg"
+                alt="Combo Dulce Brindis: vino, frutos secos, chocolates, rosas y peluche"
+                class="product-photo"
+              />
+            </div>
+            <div class="product-tag">Combo especial</div>
+          </div>
+        </div>
+      </div> <!-- cierre .container.hero-grid -->
+    </section>
+
+    <!-- 🔹 SOBRE DULCE BRINDIS -->
+    <section class="section brand-intro" id="dulce-brindis">
+      <div class="container brand-intro-grid">
+        <!-- Logo grande -->
+        <div class="brand-logo">
+          <img
+            src="media/logo-dulce-brindis.png"
+            alt="Logo Dulce Brindis: vino, chocolate y ternura"
+          />
+        </div>
+
+        <!-- Texto de presentación -->
+        <div class="brand-copy">
+          <h2>Vino, chocolate y ternura en un solo detalle</h2>
+          <p>
+            En <strong>Dulce Brindis</strong> creamos cajas regalo pensadas para parejas:
+            vino seleccionado, mix de frutos secos, chocolates, flores y un peluche
+            tierno para decir “te quiero” de una forma diferente.
+          </p>
+          <p>
+            Ideal para aniversarios, San Valentín, cumpleaños o simplemente
+            para sorprender a esa persona especial.
+          </p>
+
+          <div class="brand-badges">
+            <span>🎁 Listo para regalar</span>
+            <span>💌 Tarjeta con dedicatoria</span>
+            <span>🚚 Entrega local coordinada por WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 🔹 FIN NUEVA SECCIÓN -->
+
+    <!-- LISTA DE COMBOS -->
+    <section class="section section-combos" id="lista-combos">
+      <div class="container">
+        <h3>Nuestros combos Dulce Brindis</h3>
+        <p class="combos-subtitle">
+          Elige el detalle que mejor se ajusta a la ocasión. Todos se preparan
+          de forma personalizada para sorprender.
+        </p>
+
+        <div class="combos-grid">
+          <!-- Combo 1 -->
+          <article class="combo-card">
+            <div class="combo-card-image">
+              <img
+                src="media/combo1.jpeg"
+                alt="Combo Dulce Brindis con vino, frutos secos, chocolates y rosas"
+              />
+            </div>
+
+            <div class="combo-card-body">
+              <h4>Combo 1</h4>
+              <p class="combo-desc">
+                1 vino tinto reserva 750 ml, 1 peluche, frutos secos, 1 copa para vino, chocolates,
+                detalle romántico con rosas y tarjeta con dedicatoria personalizada.
+              </p>
+
+              <div class="combo-footer-row">
+                <a
+                  class="combo-whatsapp-link"
+                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Consultar Combo 1 por WhatsApp"
+                >
+                  <img src="media/whatsapp.png" alt="WhatsApp" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Combo 2 -->
+          <article class="combo-card">
+            <div class="combo-card-image">
+              <img
+                src="media/combo2.jpeg"
+                alt="Combo Dulce Brindis con vino, frutos secos, chocolates y rosas"
+              />
+            </div>
+
+            <div class="combo-card-body">
+              <h4>Combo 2</h4>
+              <p class="combo-desc">
+                1 vino tinto reserva 750 ml, frutos secos, 1 copa para vino, chocolates,
+                y tarjeta con dedicatoria personalizada.
+              </p>
+
+              <div class="combo-footer-row">
+                <a
+                  class="combo-whatsapp-link"
+                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Consultar Combo 2 por WhatsApp"
+                >
+                  <img src="media/whatsapp.png" alt="WhatsApp" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Combo 3 -->
+          <article class="combo-card">
+            <div class="combo-card-image">
+              <img
+                src="media/combo3.jpeg"
+                alt="Combo Dulce Brindis con vino, frutos secos, chocolates y rosas"
+              />
+            </div>
+
+            <div class="combo-card-body">
+              <h4>Combo 3</h4>
+              <p class="combo-desc">
+                1 vino tinto reserva 750 ml, 1 peluche, chocolates y
+                tarjeta con dedicatoria personalizada.
+              </p>
+
+              <div class="combo-footer-row">
+                <a
+                  class="combo-whatsapp-link"
+                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Consultar Combo 3 por WhatsApp"
+                >
+                  <img src="media/whatsapp.png" alt="WhatsApp" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Combo 4 -->
+          <article class="combo-card">
+            <div class="combo-card-image">
+              <img
+                src="media/combo4.jpg"
+                alt="Combo Dulce Brindis con vino, frutos secos, chocolates y rosas"
+              />
+            </div>
+
+            <div class="combo-card-body">
+              <h4>Combo 4</h4>
+              <p class="combo-desc">
+                1 vino tinto reserva 750 ml, frutos secos, 2 copas para vino, chocolates,
+                detalle romántico con rosas y tarjeta con dedicatoria personalizada.
+              </p>
+
+              <div class="combo-footer-row">
+                <a
+                  class="combo-whatsapp-link"
+                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Consultar Combo 4 por WhatsApp"
+                >
+                  <img src="media/whatsapp.png" alt="WhatsApp" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Combo 5 -->
+          <article class="combo-card">
+            <div class="combo-card-image">
+              <img
+                src="media/combo5.jpeg"
+                alt="Combo Dulce Brindis con vino, frutos secos, chocolates y rosas"
+              />
+            </div>
+
+            <div class="combo-card-body">
+              <h4>Combo 5 HOT</h4>
+              <p class="combo-desc">
+                1 vino tinto reserva 750 ml, chocolates, 1 caja de preservativos,
+                1 paquete de halls mentolados y tarjeta con dedicatoria personalizada.
+              </p>
+
+              <div class="combo-footer-row">
+                <a
+                  class="combo-whatsapp-link"
+                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Consultar Combo 5 por WhatsApp"
+                >
+                  <img src="media/whatsapp.png" alt="WhatsApp" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Combo 6 -->
+          <article class="combo-card">
+            <div class="combo-card-image">
+              <img
+                src="media/combo6.jpeg"
+                alt="Combo Dulce Brindis con vino, frutos secos, chocolates y rosas"
+              />
+            </div>
+
+            <div class="combo-card-body">
+              <h4>Combo 6</h4>
+              <p class="combo-desc">
+                1 vino tinto reserva 750 ml, chocolates, 1 copa para vino, 1 peluche,
+                frutos secos y tarjeta con dedicatoria personalizada.
+              </p>
+
+              <div class="combo-footer-row">
+                <a
+                  class="combo-whatsapp-link"
+                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Consultar Combo 6 por WhatsApp"
+                >
+                  <img src="media/whatsapp.png" alt="WhatsApp" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Combo 7 -->
+          <article class="combo-card">
+            <div class="combo-card-image">
+              <img
+                src="media/combo7.jpeg"
+                alt="Combo Dulce Brindis con vino, frutos secos, chocolates y rosas"
+              />
+            </div>
+
+            <div class="combo-card-body">
+              <h4>Combo 7</h4>
+              <p class="combo-desc">
+                1 vino tinto reserva 750 ml, chocolates, 1 copa para vino, 1 peluche,
+                rosas y tarjeta con dedicatoria personalizada.
+              </p>
+
+              <div class="combo-footer-row">
+                <a
+                  class="combo-whatsapp-link"
+                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Consultar Combo 7 por WhatsApp"
+                >
+                  <img src="media/whatsapp.png" alt="WhatsApp" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Combo 8 -->
+          <article class="combo-card">
+            <div class="combo-card-image">
+              <img
+                src="media/combo8.jpeg"
+                alt="Combo Dulce Brindis con vino, frutos secos, chocolates y rosas"
+              />
+            </div>
+
+            <div class="combo-card-body">
+              <h4>Combo 8</h4>
+              <p class="combo-desc">
+                1 vino tinto reserva 750 ml, chocolates, 1 copa para vino, frutos secos,
+                rosas, 1 caja de preservativos, 1 paquete de halls mentolados y tarjeta
+                con dedicatoria personalizada.
+              </p>
+
+              <div class="combo-footer-row">
+                <a
+                  class="combo-whatsapp-link"
+                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Consultar Combo 8 por WhatsApp"
+                >
+                  <img src="media/whatsapp.png" alt="WhatsApp" />
+                </a>
+              </div>
+            </div>
+          </article>
+        </div> <!-- cierre .combos-grid -->
+      </div> <!-- cierre .container -->
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="section" id="beneficios">
+      <div class="container">
+        <h3>¿Por qué nuestros combos de vino funcionan tan bien?</h3>
+        <div class="grid-3">
+          <div class="card">
+            <h4>Maridaje pensado</h4>
+            <p>Cada snack está elegido para resaltar los aromas y sabores del vino.</p>
+          </div>
+          <div class="card">
+            <h4>Regalo listo</h4>
+            <p>No tienes que armar nada: el combo llega listo para disfrutar o regalar.</p>
+          </div>
+          <div class="card">
+            <h4>Calidad seleccionada</h4>
+            <p>Vinos y snacks probados, no es un combo genérico de supermercado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CON OTRO VIDEO DE FONDO -->
+    <section class="section section-video-bg" id="ambiente">
+      <video
+        class="section-bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <source src="media/Brindis.mp4" type="video/mp4" />
+      </video>
+
+      <div class="section-bg-overlay"></div>
+
+      <div class="container video-message">
+        <h3>Un detalle que dice “te quiero”</h3>
+        <p>
+          Imagina abrir la caja y encontrar una botella de vino reserva personalizada,
+          copas listas para brindar, chocolates, rosas y un peluche que abraza tu mensaje
+          de amor. Todo listo para sorprender desde el primer vistazo.
+        </p>
+        <p>
+          Perfecto para San Valentín, aniversarios, pedidas especiales o simplemente
+          para recordarle a esa persona cuánto la amas con un momento lleno de cariño,
+          vino y dulces.
+        </p>
+      </div>
+    </section>
+
+    <!-- PASOS PARA HACER EL PEDIDO + MENSAJE FINAL -->
+    <section class="section section-steps" id="faq">
+      <div class="container">
+        <h3>Pasos para hacer tu pedido</h3>
+
+        <ol class="pedido-steps">
+          <li class="faq-item">
+            Enviar captura del detalle a solicitar.
+          </li>
+          <li class="faq-item">
+            Indicar la fecha de entrega.
+          </li>
+          <li class="faq-item">
+            Compartir la ubicación exacta de la entrega para verificar el valor del envío.
+          </li>
+          <li class="faq-item">
+            Enviar comprobante del pago del valor total.
+          </li>
+          <li class="faq-item">
+            Enviar nombres, teléfono y dirección exacta (si es casa o edificio) de la persona que recibe.
+          </li>
+        </ol>
+
+        <p class="steps-note">
+          <strong>Dulce Brindis</strong> es una tienda virtual dedicada a crear detalles
+          con vino, chocolates y momentos felices. 🌙✨<br />
+          Gracias por confiar en nosotros para celebrar lo que más importa:
+          <span>las personas que amas.</span>
+        </p>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

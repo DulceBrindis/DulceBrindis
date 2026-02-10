@@ -1,0 +1,811 @@
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+   --bg: #0f172a;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --light: #f9fafb;
+
+  /* Colores Dulce Brindis */
+  --brand-wine: #b11a3b;      /* vino / letras del logo */
+  --brand-wine-dark: #4a0718; /* vino oscuro */
+  --brand-cream: #f9ecd8;     /* crema del fondo del logo */
+
+  /* nuevos tonos cálidos inspirados en el logo */
+  --page-bg: #fdf1e3;       /* fondo general (crema) */
+  --section-bg: #fff7ec;    /* secciones claras */
+  --section-bg-alt: #fbe4cf;/* secciones alternas */
+  --text: #3b2a26;          /* texto oscuro pero cálido */
+  --muted: #826b5f;
+  --light: #fdfaf6;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+/* Layout generales */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 12, 25, 0.95),   /* vino oscuro */
+    rgba(34, 9, 18, 0.95)     /* aún más profundo */
+  );
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+/* Título estilo Dulce Brindis */
+.logo {
+  display: flex;
+  align-items: center;
+  /* ya no forzamos negrita muy fuerte */
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+/* evitamos que se convierta a mayúsculas si en algún momento lo agregas */
+.logo,
+.logo-main {
+  text-transform: none;
+}
+
+/* texto principal "Dulce Brindis" */
+.logo-main {
+  font-family: 'Great Vibes', 'Georgia', serif;
+  font-size: clamp(2.1rem, 3vw, 2.7rem);
+  color: #8b123a; /* color vino */
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25),
+    0 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+
+.header nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.header a:hover {
+  color: white;
+}
+
+.btn-link {
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  background: white;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Botones */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+/* Hero */
+.hero {
+  padding: 4rem 0 3rem;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.hero h2 {
+  font-size: 2.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.hero-list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.hero-list li {
+  margin-bottom: 0.25rem;
+}
+
+.hero-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.price-note {
+  color: #e5e7eb;
+}
+
+.hero-guarantee {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #cbd5f5;
+}
+
+/* Tarjeta producto */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  width: 260px;
+  height: 350px;
+  border-radius: 1.5rem;
+
+  /* ANTES
+  background: radial-gradient(circle at top left, #4f46e5, #0f172a);
+  */
+
+  /* AHORA: combo con colores Dulce Brindis */
+  background: radial-gradient(circle at top left, var(--brand-cream), var(--brand-wine-dark));
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f3f4f6;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.6);
+}
+
+.product-image {
+  border: 2px dashed rgba(249, 236, 216, 0.9); /* crema suave */
+  width: 80%;
+  height: 70%;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+
+/* Imagen del combo dentro de la tarjeta */
+.product-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* recorta sin deformar la imagen */
+  border-radius: 0.9rem;      /* opcional: redondea un poco la foto dentro del marco */
+}
+
+
+.product-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #facc15;
+  color: #111827;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Secciones */
+.section {
+  padding: 3rem 0;
+  background: var(--section-bg);
+}
+
+.section:nth-of-type(even) {
+  background: var(--section-bg-alt);
+}
+
+.section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Tarjetas de beneficios */
+.grid-3 {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.card h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* FAQ */
+.faq-item {
+  margin-bottom: 1rem;
+}
+
+.faq-item h4 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* Sección compra */
+.section-buy {
+  padding-bottom: 4rem;
+}
+
+.buy-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.buy-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.buy-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 0.3rem;
+}
+
+.buy-form input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+.buy-form input:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+.resumen-compra {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  align-self: flex-start;
+}
+
+/* Footer */
+.footer {
+  background: #020617;
+  color: #9ca3af;
+  padding: 1rem 0;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+/* Utilidades */
+.small-text {
+  font-size: 0.8rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1.3fr 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .buy-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+/* === HERO CON VIDEO DE FONDO === */
+
+/* quitamos el fondo sólido/degradado de .hero cuando tiene video */
+.hero.hero-video-bg {
+  background: transparent;
+}
+
+.hero-video-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+/* video ocupa toda la sección y queda detrás del overlay+texto */
+.hero-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* capa oscura encima del video */
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(88, 28, 135, 0.6), transparent 60%),
+              linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
+  z-index: 1;
+}
+
+/* texto y contenido por encima de todo */
+.hero-video-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* === SECCIÓN INFERIOR CON VIDEO DE FONDO === */
+
+/* === SECCIÓN INFERIOR CON VIDEO DE FONDO === */
+
+/* quitamos el fondo crema y usamos un fondo oscuro uniforme */
+.section.section-video-bg {
+  background: #050a16;
+}
+
+.section-video-bg {
+  position: relative;
+  overflow: hidden;
+  color: #f9fafb;
+  padding: 6rem 0;      /* mantiene el espacio arriba y abajo del texto */
+  min-height: 420px;
+}
+
+.section-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.section-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  z-index: 1;
+}
+
+.section-video-bg .video-message {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  text-align: center;
+}
+
+.section-video-bg h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.section-video-bg p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+
+
+.section-video-bg {
+  position: relative;
+  overflow: hidden;
+  color: #f9fafb;
+   padding: 6rem 0;      /* antes seguramente era 3–4rem, ahora más alto */
+  min-height: 420px;    /* asegura buena altura mínima */
+}
+
+.section-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.section-bg-overlay {
+  position: absolute;
+  /* la hacemos un poco más grande que la sección */
+  top: -15%;
+  left: 0;
+  right: 0;
+  bottom: -15%;
+  
+  background: rgba(15, 23, 42, 0.88); /* mismo tono oscuro en toda la altura */
+  z-index: 1;
+  pointer-events: none; /* que no bloquee clics */
+}
+
+
+.section-video-bg .video-message {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  text-align: center;
+}
+
+.section-video-bg h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.section-video-bg p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==== LISTA DE COMBOS ==== */
+
+.section-combos {
+  background: #fdf6ef; /* crema suave para ir con Dulce Brindis */
+}
+
+.combos-subtitle {
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+}
+
+.combos-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.combo-card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Contenedor de la imagen del combo */
+.combo-card-image {
+  width: 100%;
+  background: #fdfaf6;      /* fondo crema */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* solo margen ARRIBA y ABAJO, nada a los lados */
+  padding: 0.75rem 0;
+
+  overflow: hidden;
+}
+
+/* Imagen del combo */
+.combo-card-image img {
+  max-width: 95%;           /* deja un poquito de aire a los lados */
+  height: auto;             /* respeta proporción original */
+
+  object-fit: contain;      /* muestra toda la foto, sin recortar */
+  object-position: center;  /* centrada en ambos ejes */
+
+  border-radius: 1rem;
+  display: block;
+  margin: 0 auto;           /* por si acaso, centrado extra */
+}
+
+
+/* Compatibilidad si sigues usando <img class="combo-image"> directamente */
+.combo-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.combo-card-body {
+  padding: 1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;          /* un poco, pero no mucho */
+  flex: 1;
+}
+
+/* Título del combo */
+.combo-card-body h4 {
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem 0; /* quitamos margen de arriba, pequeño abajo */
+}
+
+/* Texto descriptivo */
+.combo-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  flex: 1;
+  margin: 0 0 0.5rem 0;  /* pegado al título, algo de espacio antes del "Desde" */
+}
+
+/* Precio */
+.combo-price {
+  font-weight: 600;
+  margin: 0;             /* sin espacio extra debajo */
+}
+
+/* Botón */
+.btn-elegir-combo {
+  width: 100%;
+  font-size: 0.95rem;
+  margin-top: 0.35rem;   /* pequeño espacio entre precio y botón */
+}
+
+
+
+/* Ajuste para pantallas pequeñas: un poco más bajita la foto */
+@media (max-width: 768px) {
+  .combo-card-image,
+  .combo-image {
+    height: 190px;
+  }
+}
+
+@media (min-width: 768px) {
+  .combos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Fila precio + icono WhatsApp en cada combo */
+.combo-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Botón redondo de WhatsApp */
+.combo-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #25d366; /* verde WhatsApp */
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Icono interno */
+.combo-whatsapp-link img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Fila precio + icono */
+.combo-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+/* Botón circular de WhatsApp */
+.combo-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #25d366; /* verde WhatsApp */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+/* Icono dentro del círculo */
+.combo-whatsapp-link img {
+  width: 22px;
+  height: 22px;
+  display: block;  /* evita espacios raros */
+}
+
+/* Hover (efecto al pasar el mouse) */
+.combo-whatsapp-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Fila de precio + icono */
+.combo-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+/* Botón redondo de WhatsApp (desktop por defecto) */
+.combo-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #25d366;          /* verde WhatsApp */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  flex-shrink: 0;                     /* que no se achique */
+}
+
+.combo-whatsapp-link img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+}
+
+.combo-whatsapp-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* 📱 Ajustes para pantallas pequeñas (tablet y móvil) */
+@media (max-width: 768px) {
+  .combo-card-body {
+    padding: 1rem 1rem 1.2rem;
+  }
+
+  .combo-footer-row {
+    margin-top: 0.5rem;
+  }
+
+  .combo-price {
+    font-size: 0.95rem;
+  }
+
+  /* Aumentamos un poco el tamaño táctil del icono */
+  .combo-whatsapp-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .combo-whatsapp-link img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* 📱 Extra pequeño (móviles muy estrechos) */
+@media (max-width: 480px) {
+  .combo-card-body {
+    padding: 0.9rem 0.9rem 1.1rem;
+  }
+
+  .combo-price {
+    font-size: 0.9rem;
+  }
+
+  .combo-whatsapp-link {
+    width: 48px;
+    height: 48px;    /* aún más fácil de tocar */
+  }
+
+  .combo-whatsapp-link img {
+    width: 26px;
+    height: 26px;
+  }
+}
+.site-footer {
+  background: #fbe4cf;        /* tono suave similar al fondo */
+  padding: 1.5rem 0 2rem;
+  margin-top: 2rem;
+}
+
+.footer-small {
+  font-size: 0.8rem;          /* letra pequeña */
+  text-align: center;
+  color: #8a5a3d;             /* marrón suave acorde con el resto */
+  line-height: 1.6;
+}
+
+.footer-small span {
+  font-weight: 600;
+}
+/* Bloque de pasos + mensaje final */
+.section-steps {
+  padding-bottom: 3rem;
+}
+
+.pedido-steps {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem; /* sangría para los números */
+}
+
+/* Texto pequeño integrado debajo de los pasos */
+.steps-note {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #8a5a3d;
+  line-height: 1.6;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.steps-note span {
+  font-weight: 600;
+}
