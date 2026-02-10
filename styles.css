@@ -937,4 +937,84 @@ body {
     padding-right: 0;
   }
 }
+/* =====================
+   SECCIÓN "SOBRE DULCE BRINDIS" (LOGO)
+   ====================== */
+
+.brand-intro {
+  background: var(--page-bg);
+}
+
+.brand-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* contenedor del logo */
+.brand-logo {
+  display: flex;
+  justify-content: center;
+}
+
+/* imagen del logo: que nunca se salga ni se corte */
+.brand-logo img {
+  display: block;
+  max-width: min(480px, 100%);
+  height: auto;
+}
+
+/* texto a la derecha del logo */
+.brand-copy h2 {
+  margin-bottom: 0.75rem;
+}
+
+.brand-copy p {
+  margin-bottom: 0.5rem;
+}
+/* ====== AJUSTE PARA MÓVIL – LOGO Y TEXTO ====== */
+@media (max-width: 768px) {
+  .brand-intro-grid {
+    grid-template-columns: 1fr;  /* 1 sola columna */
+    text-align: center;
+  }
+
+  .brand-copy {
+    max-width: 26rem;
+    margin: 0 auto;
+  }
+}
+/* ====== MENÚ RESPONSIVE ====== */
+@media (max-width: 768px) {
+
+  .header .container {
+    padding: 0 0.75rem;
+    height: auto;
+    min-height: 56px;
+    flex-wrap: wrap;
+  }
+
+  .logo-main {
+    font-size: 1.8rem;   /* un poco más pequeño para móvil */
+  }
+
+  .header nav {
+    flex-wrap: wrap;          /* permite que pase a dos filas */
+    justify-content: flex-end;
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+  }
+
+  .header nav a {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.25rem;
+  }
+
+  /* Para que el contenido no quede escondido debajo del header sticky */
+  .hero.hero-video-bg {
+    padding-top: 5.5rem; /* puedes ajustar este valor si ves que falta/sobra espacio */
+  }
+}
+
 
