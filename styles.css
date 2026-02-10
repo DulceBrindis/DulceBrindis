@@ -42,6 +42,7 @@ body {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  box-sizing: border-box;   /* importante para no pasarnos del ancho */
 }
 
 /* ===================== HEADER ===================== */
@@ -623,7 +624,7 @@ body {
   justify-content: center;
 }
 
-/* imagen del logo: que nunca se salga ni se corte */
+/* imagen del logo en desktop */
 .brand-logo img {
   display: block;
   max-width: min(480px, 100%);
@@ -686,9 +687,9 @@ body {
     max-width: 100%;
   }
 
-  /* HERO más compacto y centrado */
+  /* ===== HERO más compacto y centrado ===== */
   .hero {
-    padding: 3rem 1rem 2.5rem;
+    padding: 3.5rem 1rem 2.5rem;
   }
 
   .hero-grid {
@@ -711,10 +712,26 @@ body {
     margin-bottom: 1.5rem;
   }
 
-  /* BRAND INTRO (logo + texto) en una sola columna */
+  /* ===== BRAND INTRO (logo + texto) en una sola columna ===== */
   .brand-intro-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 1.5rem;
+  }
+
+  .brand-intro-grid > * {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* logo a ancho completo sin cortarse */
+  .brand-logo img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    margin: 0 auto;
   }
 
   .brand-copy {
@@ -722,7 +739,7 @@ body {
     margin: 0 auto;
   }
 
-  /* COMBOS: una sola columna */
+  /* ===== COMBOS: una sola columna ===== */
   .combos-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -742,12 +759,14 @@ body {
     padding-top: 5.5rem;
   }
 
-  /* MENÚ RESPONSIVE */
+  /* ===== MENÚ RESPONSIVE ===== */
   .header .container {
-    padding: 0 0.75rem;
+    flex-direction: column;        /* logo arriba, menú abajo */
+    align-items: flex-start;
+    padding: 0.4rem 0.75rem;
     height: auto;
     min-height: 56px;
-    flex-wrap: wrap;
+    gap: 0.25rem;
   }
 
   .logo-main {
@@ -755,15 +774,18 @@ body {
   }
 
   .header nav {
+    width: 100%;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.4rem;
-    margin-top: 0.3rem;
+    justify-content: space-between;
+    row-gap: 0.2rem;
+    column-gap: 0.4rem;
+    margin-top: 0.25rem;
   }
 
   .header nav a {
-    font-size: 0.8rem;
-    padding: 0.15rem 0.25rem;
+    font-size: 0.78rem;
+    padding: 0.1rem 0.25rem;
   }
 
   /* Imagen combos un poco más baja */
