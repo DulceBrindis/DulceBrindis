@@ -1,3 +1,10 @@
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* evita espacio fantasma a los lados */
+}
+
 :root {
   --primary: #4f46e5;
   --primary-dark: #3730a3;
@@ -370,6 +377,13 @@ body {
   position: relative;
   overflow: hidden;
 }
+/* Que las secciones con video siempre sean de ancho completo */
+.hero.hero-video-bg,
+.section.section-video-bg {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* “rompe” cualquier centrado del padre */
+}
+
 
 /* video ocupa toda la sección y queda detrás del overlay+texto */
 .hero-bg-video {
@@ -808,4 +822,56 @@ body {
 
 .steps-note span {
   font-weight: 600;
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr; /* una sola columna */
+    text-align: center;         /* centramos textos y botón */
+  }
+
+  .hero-list {
+    padding-left: 0;
+  }
+
+  .hero-price {
+    justify-content: center;
+  }
+
+  .hero-image {
+    order: -1;                  /* la foto del combo arriba del texto */
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ✅ Forzar que todo el contenido use el ancho completo en celulares */
+@media (max-width: 768px) {
+  .container {
+    width: 100vw;         /* que use todo el ancho visible */
+    max-width: 100vw;
+    padding-left: 1rem;   /* un poquito de margen interno */
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+}
+
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;   /* evita scroll horizontal raro */
+  }
+
+  main,
+  section,
+  header,
+  footer {
+    width: 100%;
+    max-width: 100%;
+  }
 }
