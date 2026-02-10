@@ -875,3 +875,66 @@ body {
     max-width: 100%;
   }
 }
+/* ===== Ajustes fuertes para CELULAR (<= 768px) ===== */
+@media (max-width: 768px) {
+  /* El contenedor usa todo el ancho de la pantalla */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* sin scroll horizontal raro */
+  }
+
+  /* BRAND INTRO (logo + texto) en una sola columna */
+  .brand-intro-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .brand-intro-grid > * {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* HERO: texto y tarjeta uno debajo del otro en móvil */
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero-grid > * {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* COMBOS: cada combo ocupa todo el ancho */
+  .combos-grid {
+    display: grid;
+    grid-template-columns: 1fr;  /* una sola columna */
+    gap: 1.5rem;
+  }
+
+  .combo-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Un poco menos padding lateral en secciones para que se vea más amplio */
+  .section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
