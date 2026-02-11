@@ -164,7 +164,7 @@
               <div class="combo-footer-row">
                 <a
                   class="combo-whatsapp-link"
-                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  href="https://wa.me/593996397837"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Consultar Combo 1 por WhatsApp"
@@ -197,7 +197,7 @@
               <div class="combo-footer-row">
                 <a
                   class="combo-whatsapp-link"
-                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  href="https://wa.me/593996397837"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Consultar Combo 2 por WhatsApp"
@@ -229,7 +229,7 @@
               <div class="combo-footer-row">
                 <a
                   class="combo-whatsapp-link"
-                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  href="https://wa.me/593996397837"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Consultar Combo 3 por WhatsApp"
@@ -262,7 +262,7 @@
               <div class="combo-footer-row">
                 <a
                   class="combo-whatsapp-link"
-                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  href="https://wa.me/593996397837"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Consultar Combo 4 por WhatsApp"
@@ -296,10 +296,10 @@
               <div class="combo-footer-row">
                 <a
                   class="combo-whatsapp-link"
-                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  href="https://wa.me/593996397837"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Consultar Combo 6 por WhatsApp"
+                  aria-label="Consultar Combo 5 por WhatsApp"
                 >
                   <img src="media/whatsapp.png" alt="WhatsApp" />
                 </a>
@@ -329,10 +329,10 @@
               <div class="combo-footer-row">
                 <a
                   class="combo-whatsapp-link"
-                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  href="https://wa.me/593996397837"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Consultar Combo 7 por WhatsApp"
+                  aria-label="Consultar Combo 6 por WhatsApp"
                 >
                   <img src="media/whatsapp.png" alt="WhatsApp" />
                 </a>
@@ -362,10 +362,10 @@
               <div class="combo-footer-row">
                 <a
                   class="combo-whatsapp-link"
-                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  href="https://wa.me/593996397837"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Consultar Combo 5 por WhatsApp"
+                  aria-label="Consultar Combo 7 por WhatsApp"
                 >
                   <img src="media/whatsapp.png" alt="WhatsApp" />
                 </a>
@@ -398,7 +398,7 @@
               <div class="combo-footer-row">
                 <a
                   class="combo-whatsapp-link"
-                  href="https://chat.whatsapp.com/GAmJZmjlEeQJH4E6mycisr"
+                  href="https://wa.me/593996397837"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Consultar Combo 8 por WhatsApp"
@@ -523,7 +523,7 @@
     </div>
   </div>
 
-  <!-- 🔹 Script: iniciar arriba + zoom de imágenes -->
+  <!-- 🔹 Script: iniciar arriba + zoom de imágenes + WhatsApp dinámico -->
   <script>
     // Evita que el navegador recuerde la posición de scroll al recargar/volver atrás
     if ("scrollRestoration" in history) {
@@ -535,7 +535,7 @@
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     });
 
-    // Lightbox sencillo para las fotos de combos y la foto del hero
+    // ========= LIGHTBOX / MODAL PARA VER LAS IMÁGENES MÁS GRANDES =========
     (function () {
       const modal = document.getElementById("imageModal");
       const modalImg = document.getElementById("imgModalPhoto");
@@ -546,7 +546,7 @@
         modalImg.src = src;
         modalImg.alt = alt || "";
         modal.classList.add("is-open");
-        document.body.style.overflow = "hidden"; // evita scroll de fondo
+        document.body.style.overflow = "hidden"; // evita scroll del fondo
       }
 
       function cerrarModal() {
@@ -572,6 +572,46 @@
         if (e.key === "Escape" && modal.classList.contains("is-open")) {
           cerrarModal();
         }
+      });
+    })();
+
+    // ========= WHATSAPP DINÁMICO POR COMBO =========
+    (function () {
+      // Número: +593 0996397837 -> 593996397837
+      const WHATSAPP_PHONE = "593996397837";
+
+      document.querySelectorAll(".combo-whatsapp-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Buscamos datos del combo al que pertenece este botón
+          const card = this.closest(".combo-card");
+          const comboName =
+            (card.querySelector("h4") && card.querySelector("h4").textContent.trim()) ||
+            "Combo Dulce Brindis";
+          const priceText =
+            (card.querySelector(".combo-price") &&
+              card.querySelector(".combo-price").textContent.trim()) ||
+            "";
+          const descNode = card.querySelector(".combo-desc");
+          let desc = "";
+          if (descNode) {
+            // innerText respeta los saltos de línea (<br>)
+            desc = (descNode.innerText || descNode.textContent || "").trim();
+          }
+
+          const message =
+            `Hola 👋, me interesa el ${comboName} de Dulce Brindis.\n` +
+            (priceText ? `${priceText}\n\n` : "") +
+            (desc ? `Detalle del combo:\n${desc}\n\n` : "") +
+            "¿Me puedes indicar si está disponible y el proceso para hacer el pedido?";
+
+          const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
+            message
+          )}`;
+
+          window.open(url, "_blank");
+        });
       });
     })();
   </script>
