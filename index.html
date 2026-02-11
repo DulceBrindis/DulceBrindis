@@ -455,8 +455,8 @@
         <h3>¿Por qué nuestros combos de vino funcionan tan bien?</h3>
         <div class="grid-3">
           <div class="card">
-            <h4>Maridaje pensado</h4>
-            <p>Cada snack está elegido para resaltar los aromas y sabores del vino.</p>
+            <h4>Sabor pensado</h4>
+            <p>Cada vino se acompaña con snacks seleccionados para realzar su sabor y crear una experiencia completa en cada brindis.</p>
           </div>
           <div class="card">
             <h4>Regalo listo</h4>
@@ -508,17 +508,72 @@
     </p>
   </main>
 
-  <!-- 🔹 Script para que siempre inicie desde el principio de la página -->
+  <!-- 🔍 Modal para ver imágenes ampliadas -->
+  <div id="imageModal" class="img-modal" aria-hidden="true">
+    <div class="img-modal-backdrop"></div>
+    <div class="img-modal-content">
+      <button
+        class="img-modal-close"
+        type="button"
+        aria-label="Cerrar imagen"
+      >
+        &times;
+      </button>
+      <img id="imgModalPhoto" src="" alt="Detalle del combo" />
+    </div>
+  </div>
+
+  <!-- 🔹 Script: iniciar arriba + zoom de imágenes -->
   <script>
     // Evita que el navegador recuerde la posición de scroll al recargar/volver atrás
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
     }
 
     // Cuando termine de cargar la página, subimos al inicio
-    window.addEventListener('load', function () {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    window.addEventListener("load", function () {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     });
+
+    // Lightbox sencillo para las fotos de combos y la foto del hero
+    (function () {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("imgModalPhoto");
+      const closeBtn = document.querySelector(".img-modal-close");
+      const backdrop = document.querySelector(".img-modal-backdrop");
+
+      function abrirModal(src, alt) {
+        modalImg.src = src;
+        modalImg.alt = alt || "";
+        modal.classList.add("is-open");
+        document.body.style.overflow = "hidden"; // evita scroll de fondo
+      }
+
+      function cerrarModal() {
+        modal.classList.remove("is-open");
+        modalImg.src = "";
+        document.body.style.overflow = "";
+      }
+
+      // Todas las imágenes de combos y la del hero
+      document
+        .querySelectorAll(".combo-card-image img, .product-photo")
+        .forEach((img) => {
+          img.style.cursor = "zoom-in";
+          img.addEventListener("click", () => {
+            abrirModal(img.src, img.alt);
+          });
+        });
+
+      closeBtn.addEventListener("click", cerrarModal);
+      backdrop.addEventListener("click", cerrarModal);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("is-open")) {
+          cerrarModal();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
