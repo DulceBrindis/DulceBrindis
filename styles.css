@@ -972,3 +972,126 @@ body {
     font-size: 0.86rem;
   }
 }
+
+/* Cursor de zoom en las fotos clicables */
+.combo-card-image img,
+.product-photo {
+  cursor: zoom-in;
+}
+
+/* ===== Modal de imagen (lightbox) ===== */
+.img-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 60; /* por encima del header */
+}
+
+.img-modal.is-open {
+  display: flex;
+}
+
+.img-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.img-modal-content {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  background: #ffffff;
+}
+
+.img-modal-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Botón de cierre */
+.img-modal-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.7rem;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  color: #f9fafb;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.img-modal-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Ajustes en móvil */
+@media (max-width: 768px) {
+  .img-modal-content {
+    max-width: 94vw;
+    max-height: 90vh;
+    border-radius: 0.75rem;
+  }
+}
+/* ===== MODAL / LIGHTBOX PARA IMÁGENES ===== */
+
+.img-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.img-modal.is-open {
+  display: flex;
+}
+
+.img-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(3px);
+}
+
+.img-modal-content {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 0.75rem;
+  background: #111827;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+.img-modal-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 0.75rem;
+}
+
+.img-modal-close {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.45rem;
+  background: transparent;
+  border: none;
+  color: #f9fafb;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
